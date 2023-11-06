@@ -5,11 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="./bootstrap.min.css" />
     <title>Asinc-Await-movies</title>
-   <script src="https://api.themoviedb.org/3/movie/550?api_key=9e9cd7ce5dfc1c9de8d770d482d83132"></script>
-   <!--Api Key: 9e9cd7ce5dfc1c9de8d770d482d83132-->
-   <script src="./main.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js" defer></script>
 </head>
 <body>
-    
+    <div class="container"></div>
+    <h1>API Movies</h1>
+    <div class="form-group">
+        <h2>Find your movie here</h2>
+    </div>
+    <form id="form" class="form-group">
+        <input
+            type="search"
+            class="form-control"
+            id="searchId"
+            placeholder="search"
+        />
+        <input type="submit" value="Search movie" class="btn btn-primary"/>
+    </form>
+    <section
+        id="title"
+        class="d-flex justify-content-center flex-wrap"
+    ></section>
 </body>
 </html>
