@@ -1,6 +1,7 @@
 const APIKey = "9e9cd7ce5dfc1c9de8d770d482d83132";
 const TokenAPI = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTljZDdjZTVkZmMxYzlkZThkNzcwZDQ4MmQ4MzEzMiIsInN1YiI6IjY1NDYxMjYyNDFhNTYxMzM2OTNhMmEwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kFUENuVrI79BXjHDt6wbsL3mLbJhGvNnmZI6rrq6xMg"
 const URL = "https://api.themoviedb.org/3/movie/550?api_key=9e9cd7ce5dfc1c9de8d770d482d83132";
+const APIURL = "https://api.themoviedb.org/3/search/movie"
 
 const moviesContainer = document.querySelector('#title')
 const formSearch = document.getElementById('form')
@@ -29,4 +30,31 @@ const showMovies = (movies) => {
     }
     )
 }
+
+const searchMovie = async (e) => {
+    e.preventDefault()
+    try {
+        const search = searchInput.value
+        const res = await axios.get(`${URL}?query=${search}&include_adult=false&page=1&api_key=${APIKey}`)
+        const movies = res.data.results
+        showMovies(movies)
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+formSearch.addEventListener('submit', searchMovie)
+
+// const options = {
+//     method: 'GET',
+//     headers: {
+//       accept: 'application/json',
+//       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTljZDdjZTVkZmMxYzlkZThkNzcwZDQ4MmQ4MzEzMiIsInN1YiI6IjY1NDYxMjYyNDFhNTYxMzM2OTNhMmEwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kFUENuVrI79BXjHDt6wbsL3mLbJhGvNnmZI6rrq6xMg'
+//     }
+//   };
+  
+//   fetch('https://api.themoviedb.org/3/search/movie?query=ghost&include_adult=false&language=en-US&page=1', options)
+//     .then(response => response.json())
+//     .then(response => console.log(response))
+//     .catch(err => console.error(err));
 
