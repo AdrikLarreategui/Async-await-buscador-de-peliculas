@@ -1,13 +1,10 @@
 const APIKey = "a25d776e9ca63550cc426057cb76929d";
-const TokenAPI = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTljZDdjZTVkZmMxYzlkZThkNzcwZDQ4MmQ4MzEzMiIsInN1YiI6IjY1NDYxMjYyNDFhNTYxMzM2OTNhMmEwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kFUENuVrI79BXjHDt6wbsL3mLbJhGvNnmZI6rrq6xMg"
-//const URL = "https://api.themoviedb.org/3/movie/550?api_key=9e9cd7ce5dfc1c9de8d770d482d83132";
+//const TokenAPI = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjVkNzc2ZTljYTYzNTUwY2M0MjYwNTdjYjc2OTI5ZCIsInN1YiI6IjY1NDYxMjYyNDFhNTYxMzM2OTNhMmEwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.roLbn8LsKRr5cYlW2sX_GYuc2rZhFZ49y4W9TmzZX_E"
 const APIURL = "https://api.themoviedb.org/3/search/movie"
 
 const moviesContainer = document.querySelector('#title')
 const formSearch = document.getElementById('form')
 const searchInput = document.getElementById('searchId')
-
-
 
 const showMovies = (movies) => {
     moviesContainer.innerHTML = ''
